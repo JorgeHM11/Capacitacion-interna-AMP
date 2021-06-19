@@ -1,6 +1,6 @@
 ---
 title: "Visualización de datos"
-author: "Jorge Huanca-Martinez"
+author: "Jorge Alberto Huanca-Martinez"
 institute: "Avances en Medición Psicológica"
 date: "22/5/2021"
 output: 
