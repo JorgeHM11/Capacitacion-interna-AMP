@@ -1,0 +1,206 @@
+---
+title: "Visualización de datos"
+author: "Jorge Huanca-Martinez"
+institute: "Avances en Medición Psicológica"
+date: "22/5/2021"
+output: 
+  xaringan::moon_reader:
+    css: ["default","chocolate-fonts", "metropolis"]
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: 16:9
+---
+class: inverse, center, middle
+# .font150[**Cómo construir gráficos con ggplot2**]
+
+---
+#Capas básicas
+
+.pull-left[
+Un gráfico esta compuesto **mínimamente** por tres capas: 
+- Datos
+- Coordenadas
+- Geometría
+]
+
+.pull-right[
+```{r, out.width="80%", echo = FALSE}
+knitr::include_graphics("imagenes/ggplot2_capas_básicas.png", dpi = 500)
+```
+]
+
+---
+# Paso 0. Cargar paquete 
+
+.font105[.line-space1-5[
+`Tidyverse` es un ecosistema de paquetes, entre los cuales se encuentra `ggplot2`
+]]
+
+```{r}
+library(tidyverse)                
+```
+
+---
+# Paso 1. Base de datos
+.font105[.line-space1-5[
+El primer argumento refiere a la data, en este caso trabajaremos con `iris`, la cual viene por defecto en R
+]]
+
+.pull-left[
+```{r, eval = FALSE}
+ggplot(data = iris) 
+```
+]
+
+.pull-right[
+```{r echo = FALSE}
+ggplot(data = iris)
+```
+]
+
+---
+# Paso 2. Coordenadas 
+.font105[.line-space1-5[
+El segundo argumento refiere a las coordenadas, para ello colocamos `aes`, señalando eje horizontal (x) y vertical (y)
+]]
+
+
+.pull-left[
+```{r, eval = FALSE}
+ggplot(data = iris,
+       aes(x = Petal.Length,   #<<
+           y = Sepal.Length))  #<<
+```
+]
+
+.pull-right[
+```{r echo = FALSE, fig.retina = 3}
+ggplot(data = iris,
+       aes(x = Petal.Length,
+           y = Sepal.Length))  
+```
+]
+
+---
+# Paso 3. Geometrías
+.font105[.line-space1-5[
+El tercer argumento refiere a las geometrías, para ello agregamos una capa **(con el símbolo +) ** y colocamos `geom`
+]]
+.pull-left[
+```{r, eval = FALSE}
+ggplot(data = iris,
+       aes(x = Petal.Length,
+           y = Sepal.Length)) +
+       geom_point()             #<<
+```
+]
+
+.pull-right[
+```{r echo = FALSE, fig.retina = 3}
+ggplot(data = iris,
+       aes(x = Petal.Length,
+           y = Sepal.Length)) +
+       geom_point()
+```
+]
+
+---
+class: inverse, center, middle
+# .font100[Una vez se cuenta con las 3 capas básicas, se puede agregar otras para personalizar más el gráfico]
+
+---
+# Paso 4. Color (Parte de Estéticas)
+.font105[.line-space1-5[
+Con `aes`, además de las coordenadas, se puede colorear el gráfico. En este caso, coloreamos según **especies**
+]]
+.pull-left[
+```{r, eval = FALSE}
+ggplot(data = iris,
+       aes(x = Petal.Length,
+           y = Sepal.Length,
+           colour = Species)) +  #<<
+       geom_point()
+```
+]
+
+.pull-right[
+```{r echo = FALSE, fig.retina = 3}
+ggplot(data = iris,
+       aes(x = Petal.Length,
+           y = Sepal.Length,
+           colour = Species)) +
+       geom_point()
+```
+]
+
+---
+# Paso 5. Temas
+.font105[.line-space1-5[
+El cuarto argumento refiere a los temas o formatos de la gráfica, para ello agregamos una capa  y colocamos `theme`
+]]
+.pull-left[
+```{r, eval = FALSE}
+ggplot(data = iris,
+       aes(x = Petal.Length,
+           y = Sepal.Length,
+           colour = Species)) +
+       geom_point() +
+       theme_classic()         #<<
+```
+]
+
+.pull-right[
+```{r echo = FALSE}
+ggplot(data = iris,
+       aes(x = Petal.Length,
+           y = Sepal.Length,
+           colour = Species)) +
+       geom_point() +
+       theme_classic()
+```
+]
+
+---
+# Paso 6. Etiquetas
+.font105[.line-space1-5[
+El quinto argumento refiere a las etiquetas, para ello agregamos una capa y colocamos`labs`
+]]
+.pull-left[
+```{r, eval = FALSE}
+ggplot(data = iris,
+       aes(x = Petal.Length,
+           y = Sepal.Length,
+           colour = Species)) +
+       geom_point() +
+       theme_classic() +
+       labs(                                    #<<
+       title = "Distribución de las especies",  #<<
+       subtitle = "Gráfica propia"              #<<
+       )
+```
+]
+
+.pull-right[
+```{r echo = FALSE}
+ggplot(data = iris,
+       aes(x = Petal.Length,
+           y = Sepal.Length,
+           colour = Species)) +
+       geom_point() +
+       theme_classic() +
+       labs(                                    
+       title = "Distribución de las especies",  
+       subtitle = "Gráfica propia"              
+       )                                      
+```
+]
+
+---
+
+## Jorge Huanca Martinez
+
+.line-space1-5[
+Estas diapositivas fueron creadas mediante el paquete [xaringan](https://github.com/yihui/xaringan) y [xaringanthemer](https://github.com/gadenbuie/xaringanthemer/). Adicionalmente, la presentación de [Brian Peña](https://github.com/brianmsm), sobre [Rmarkdown Nivel Básico](https://github.com/brianmsm/rmakdown-basico), fue tomada como guía-base para esta elaboración.
+]
