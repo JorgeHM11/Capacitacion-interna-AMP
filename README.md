@@ -1,1 +1,1 @@
-Capacitación interna AMP: https://jorgehm11.github.io/Capacitacion-interna-AMP/Demo_xaringan.html
+Capacitación interna AMP sobre visualización de datos con R: https://jorgehm11.github.io/Capacitacion-interna-AMP/Demo_xaringan.html
