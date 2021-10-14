@@ -1,26 +1,84 @@
 <!DOCTYPE html>
 <html lang="" xml:lang="">
   <head>
-    <title>Visualización de datos</title>
+    <title>Visualización de datos con R</title>
     <meta charset="utf-8" />
     <meta name="author" content="Jorge Alberto Huanca-Martinez" />
-    <script src="libs/header-attrs-2.11/header-attrs.js"></script>
-    <link href="libs/remark-css-0.0.1/default.css" rel="stylesheet" />
-    <link href="libs/remark-css-0.0.1/default-fonts.css" rel="stylesheet" />
+    <script src="libs/header-attrs/header-attrs.js"></script>
+    <link href="libs/tile-view/tile-view.css" rel="stylesheet" />
+    <script src="libs/tile-view/tile-view.js"></script>
+    <link href="libs/tachyons/tachyons.min.css" rel="stylesheet" />
+    <link href="libs/panelset/panelset.css" rel="stylesheet" />
+    <script src="libs/panelset/panelset.js"></script>
+    <script type="application/json" id="xaringanExtra-editable-docid">{"id":"f64cc263b67b484eb9955bbb4936b60b","expires":1}</script>
+    <script src="libs/himalaya/himalaya.js"></script>
+    <script src="libs/js-cookie/js.cookie.js"></script>
+    <link href="libs/editable/editable.css" rel="stylesheet" />
+    <script src="libs/editable/editable.js"></script>
+    <script src="libs/clipboard/clipboard.min.js"></script>
+    <link href="libs/xaringanExtra-clipboard/xaringanExtra-clipboard.css" rel="stylesheet" />
+    <script src="libs/xaringanExtra-clipboard/xaringanExtra-clipboard.js"></script>
+    <script>window.xaringanExtraClipboard(null, {"button":"Copiar","success":"Copiado","error":"Presiona Ctrl+C para copiar"})</script>
+    <script src="libs/xaringanExtra_fit-screen/fit-screen.js"></script>
+    <link href="libs/xaringanExtra-extra-styles/xaringanExtra-extra-styles.css" rel="stylesheet" />
+    <link href="libs/font-awesome-animation/font-awesome-animation-emi.css" rel="stylesheet" />
+    <script src="libs/fontawesome/js/fontawesome-all.min.js"></script>
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+    <link rel="stylesheet" href="custom.css" type="text/css" />
   </head>
   <body>
     <textarea id="source">
 class: center, middle, inverse, title-slide
 
-# Visualización de datos
+# Visualización de datos con R
 ### Jorge Alberto Huanca-Martinez
 ### Avances en Medición Psicológica
 ### 22/5/2021 (Actualizado: 13/10/2021)
 
 ---
 
+
 class: inverse, center, middle
-# .font150[**Cómo construir gráficos con ggplot2**]
+# .font150[Cómo construir gráficos con ggplot2]
+
+
+
+
+
+
+<div>
+<style type="text/css">.xaringan-extra-logo {
+width: 100px;
+height: 100px;
+z-index: 0;
+background-image: url(img/logo.png);
+background-size: contain;
+background-repeat: no-repeat;
+position: absolute;
+top:1em;right:1em;
+}
+</style>
+<script>(function () {
+  let tries = 0
+  function addLogo () {
+    if (typeof slideshow === 'undefined') {
+      tries += 1
+      if (tries < 10) {
+        setTimeout(addLogo, 100)
+      }
+    } else {
+      document.querySelectorAll('.remark-slide-content:not(.title-slide):not(.inverse):not(.hide_logo)')
+        .forEach(function (slide) {
+          const logo = document.createElement('a')
+          logo.classList = 'xaringan-extra-logo'
+          logo.href = 'https://www.linktr.ee/innov_lab'
+          slide.appendChild(logo)
+        })
+    }
+  }
+  document.addEventListener('DOMContentLoaded', addLogo)
+})()</script>
+</div>
 
 ---
 class: inverse
@@ -215,8 +273,58 @@ ggplot(data = iris,
 ]
 
 ---
+# Cuerpo: Integración de Javascript 
+.font105[Prueba de integración del lenguaje **javascript**]
 
-## Jorge Huanca Martinez
+.panelset[
+.panel[.panel-name[Prueba 1]
+
+#### 1. Código HTML
+
+```
+&lt;img src="https://rubenfcasal.github.io/bookdown_intro/images/rmarkdown.png" width="300px"/&gt;
+```
+
+]
+
+.panel[.panel-name[Prueba 2]
+
+#### 2. Código R
+
+
+````
+```{r, echo=FALSE, , out.width = '30%'}
+knitr::include_graphics('https://rubenfcasal.github.io/bookdown_intro/images/rmarkdown.png', 
+      dpi = 600) 
+```
+````
+
+]
+]
+
+---
+
+class: middle
+
+&lt;br&gt;
+&lt;center&gt;
+&lt;h1&gt;
+&lt;span style="color:black"&gt;Jorge Huanca Martinez&lt;/span&gt;
+&lt;h1&gt;
+
+&lt;h3&gt;
+<span>&lt;i class="fas  fa-envelope fa-xs faa-pulse animated "&gt;&lt;/i&gt;&lt;a href="mailto:jorgeahm98@gmail.com"&gt;&lt;span style="color:#562457"&gt;&amp;nbsp;&amp;nbsp;jorgeahm98@gmail.com&lt;/span&gt;&lt;/a&gt;</span>
+&lt;/h3&gt;
+&lt;h3&gt;
+<span>&lt;i class="fab  fa-github fa-xs faa-pulse animated "&gt;&lt;/i&gt;&lt;a href="https://github.com/JorgeHM11/"&gt;&lt;span style="color:#562457"&gt;&amp;nbsp;&amp;nbsp; @JorgeHM11&lt;/span&gt;&lt;/a&gt;</span>
+&lt;/h3&gt;
+&lt;h3&gt;
+<span>&lt;i class="fab  fa-twitter fa-xs faa-pulse animated "&gt;&lt;/i&gt;&lt;a href="https://twitter.com/JorgeAHM_98"&gt;&lt;span style="color:#562457"&gt;&amp;nbsp;&amp;nbsp; @JorgeAHM_98&lt;/span&gt;&lt;/a&gt;</span>
+&lt;/h3&gt;
+&lt;/center&gt;
+
+
+&lt;br&gt;
 
 .line-space1-5[
 Estas diapositivas fueron creadas mediante el paquete [xaringan](https://github.com/yihui/xaringan) y [xaringanthemer](https://github.com/gadenbuie/xaringanthemer/). Adicionalmente, la presentación de [Brian Peña](https://github.com/brianmsm), sobre [Rmarkdown Nivel Básico](https://github.com/brianmsm/rmakdown-basico), fue tomada como guía-base para esta elaboración.
@@ -228,7 +336,7 @@ Estas diapositivas fueron creadas mediante el paquete [xaringan](https://github.
 "highlightStyle": "github",
 "highlightLines": true,
 "countIncrementalSlides": false,
-"ratio": "16:10"
+"ratio": "16:11"
 });
 if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
   window.dispatchEvent(new Event('resize'));

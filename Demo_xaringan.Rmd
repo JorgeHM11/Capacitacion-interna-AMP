@@ -1,20 +1,62 @@
 ---
-title: "Visualización de datos"
+title: "Visualización de datos con R"
 author: "Jorge Alberto Huanca-Martinez"
 institute: "Avances en Medición Psicológica"
 date: "22/5/2021 (Actualizado: 13/10/2021)"
 output: 
   xaringan::moon_reader:
+    css: [xaringan-themer.css, custom.css]
     lib_dir: libs
     nature:
       highlightStyle: github
       highlightLines: true
       countIncrementalSlides: false
-      ratio: 16:10
-
+      ratio: 16:11
+encoding: "UTF-8"
 ---
+
 class: inverse, center, middle
-# .font150[**Cómo construir gráficos con ggplot2**]
+# .font150[Cómo construir gráficos con ggplot2]
+
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+```
+
+```{r xaringan-themer, warning=FALSE, include=FALSE}
+library(xaringanthemer)
+style_mono_accent(
+  base_color       = "#43418A",
+  padding          = "16px 50px 12px 50px",
+  code_font_google = google_font("Fira Mono")
+)
+```
+
+```{r xaringanExtra, echo=FALSE}
+#devtools::install_github("gadenbuie/xaringanExtra")
+library(xaringanExtra)
+xaringanExtra::use_xaringan_extra(c("tile_view", "tachyons", "panelset"))
+xaringanExtra::use_editable(expires = 1)
+xaringanExtra::use_logo(
+  image_url = "img/logo.png",
+  link_url = "https://www.linktr.ee/innov_lab",
+  width = 100,
+  height = 100
+)
+
+xaringanExtra::use_clipboard(
+  button_text = "Copiar",
+  success_text = "Copiado",
+  error_text = "Presiona Ctrl+C para copiar"
+)
+
+xaringanExtra::use_fit_screen()
+
+xaringanExtra::use_extra_styles(
+  hover_code_line = TRUE,          #<<
+  mute_unhighlighted_code = FALSE  #<<
+)
+```
 
 ---
 class: inverse
@@ -208,14 +250,65 @@ ggplot(data = iris,
        theme_classic() +
        labs(                                    
        title = "Distribución de las especies",  
-       subtitle = "Gráfica propia"              
+       subtitle = "Gráfica propia",      
+       caption  = "Avances en Medición Psicólogica"
        )                                      
 ```
 ]
 
 ---
+# Cuerpo: Integración de Javascript 
+.font105[Prueba de integración del lenguaje **javascript**]
 
-## Jorge Huanca Martinez
+.panelset[
+.panel[.panel-name[Prueba 1]
+
+#### 1. Código HTML
+
+```
+<img src="https://rubenfcasal.github.io/bookdown_intro/images/rmarkdown.png" width="300px"/>
+```
+
+]
+
+.panel[.panel-name[Prueba 2]
+
+#### 2. Código R
+
+```{r, echo=FALSE, comment=""}
+cat(c("```{r, echo=FALSE, , out.width = '30%'}",
+      "knitr::include_graphics('https://rubenfcasal.github.io/bookdown_intro/images/rmarkdown.png', 
+      dpi = 600) ",
+      "```"), 
+    sep='\n')
+```
+
+]
+]
+
+---
+
+class: middle
+
+<br>
+<center>
+<h1>
+<span style="color:black">Jorge Huanca Martinez</span>
+<h1>
+
+<h3>
+`r anicon::faa('envelope', size = 'xs', animate='pulse', rtext='<a href="mailto:jorgeahm98@gmail.com"><span style="color:#562457">&nbsp;&nbsp;jorgeahm98@gmail.com</span></a>')`
+</h3>
+<h3>
+`r anicon::faa('github', size = 'xs', animate='pulse', rtext='<a href="https://github.com/JorgeHM11/"><span style="color:#562457">&nbsp;&nbsp; @JorgeHM11</span></a>')`
+</h3>
+<h3>
+`r anicon::faa('twitter', size = 'xs', animate='pulse', rtext='<a href="https://twitter.com/JorgeAHM_98"><span style="color:#562457">&nbsp;&nbsp; @JorgeAHM_98</span></a>')`
+</h3>
+</center>
+
+
+<br>
 
 .line-space1-5[
 Estas diapositivas fueron creadas mediante el paquete [xaringan](https://github.com/yihui/xaringan) y [xaringanthemer](https://github.com/gadenbuie/xaringanthemer/). Adicionalmente, la presentación de [Brian Peña](https://github.com/brianmsm), sobre [Rmarkdown Nivel Básico](https://github.com/brianmsm/rmakdown-basico), fue tomada como guía-base para esta elaboración.
