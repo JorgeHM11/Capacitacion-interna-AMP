@@ -2,18 +2,25 @@
 title: "Visualización de datos"
 author: "Jorge Alberto Huanca-Martinez"
 institute: "Avances en Medición Psicológica"
-date: "22/5/2021"
+date: "22/5/2021 (Actualizado: 13/10/2021)"
 output: 
   xaringan::moon_reader:
-    css: ["default","chocolate-fonts", "metropolis"]
+    lib_dir: libs
     nature:
       highlightStyle: github
       highlightLines: true
       countIncrementalSlides: false
-      ratio: 16:9
+      ratio: 16:10
+
 ---
 class: inverse, center, middle
 # .font150[**Cómo construir gráficos con ggplot2**]
+
+---
+class: inverse
+
+background-image:url(https://pbs.twimg.com/media/DsdIzJ3VsAAbjMW?format=jpg&name=small)
+background-size: cover     
 
 ---
 #Capas básicas
@@ -26,7 +33,7 @@ Un gráfico esta compuesto **mínimamente** por tres capas:
 ]
 
 .pull-right[
-```{r, out.width="80%", echo = FALSE}
+```{r, out.width = "100%", echo = FALSE}
 knitr::include_graphics("imagenes/ggplot2_capas_básicas.png", dpi = 500)
 ```
 ]
@@ -37,6 +44,8 @@ knitr::include_graphics("imagenes/ggplot2_capas_básicas.png", dpi = 500)
 .font105[.line-space1-5[
 `Tidyverse` es un ecosistema de paquetes, entre los cuales se encuentra `ggplot2`
 ]]
+
+--
 
 ```{r}
 library(tidyverse)                
@@ -111,6 +120,12 @@ class: inverse, center, middle
 # .font100[Una vez se cuenta con las 3 capas básicas, se puede agregar otras para personalizar más el gráfico]
 
 ---
+class: inverse
+
+background-image:url(https://pbs.twimg.com/media/EQ-uBWcX0AIc_bs.png)
+background-size: cover     
+
+---
 # Paso 4. Color (Parte de Estéticas)
 .font105[.line-space1-5[
 Con `aes`, además de las coordenadas, se puede colorear el gráfico. En este caso, coloreamos según **especies**
@@ -165,7 +180,7 @@ ggplot(data = iris,
 ---
 # Paso 6. Etiquetas
 .font105[.line-space1-5[
-El quinto argumento refiere a las etiquetas, para ello agregamos una capa y colocamos`labs`
+El quinto argumento refiere a las etiquetas, para ello agregamos una capa y colocamos `labs`. En ella podemos específicar el título, subtítulo, leyenda, y otros.
 ]]
 .pull-left[
 ```{r, eval = FALSE}
@@ -175,10 +190,11 @@ ggplot(data = iris,
            colour = Species)) +
        geom_point() +
        theme_classic() +
-       labs(                                    #<<
-       title = "Distribución de las especies",  #<<
-       subtitle = "Gráfica propia"              #<<
-       )
+       labs(                                        #<<
+       title = "Distribución de las especies",      #<<
+       subtitle = "Gráfica propia"                  #<<
+       caption  = "Avances en Medición Psicólogica" #<<
+       )                                            #<<
 ```
 ]
 
