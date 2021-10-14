@@ -105,6 +105,8 @@ ggplot(data = iris)
 ```
 ]
 
+--
+
 .pull-right[
 ```{r echo = FALSE}
 ggplot(data = iris)
@@ -125,6 +127,8 @@ ggplot(data = iris,
            y = Sepal.Length))  #<<
 ```
 ]
+
+--
 
 .pull-right[
 ```{r echo = FALSE, fig.retina = 3}
@@ -147,6 +151,8 @@ ggplot(data = iris,
        geom_point()             #<<
 ```
 ]
+
+--
 
 .pull-right[
 ```{r echo = FALSE, fig.retina = 3}
@@ -182,6 +188,8 @@ ggplot(data = iris,
 ```
 ]
 
+--
+
 .pull-right[
 ```{r echo = FALSE, fig.retina = 3}
 ggplot(data = iris,
@@ -207,6 +215,8 @@ ggplot(data = iris,
        theme_classic()         #<<
 ```
 ]
+
+--
 
 .pull-right[
 ```{r echo = FALSE}
@@ -239,6 +249,8 @@ ggplot(data = iris,
        )                                            #<<
 ```
 ]
+
+--
 
 .pull-right[
 ```{r echo = FALSE}
